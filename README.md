@@ -24,12 +24,10 @@ $ curl http://localhost:5000/get/pokemons?Name=Pikachu
 $ curl http://localhost:5000/get/types?Name=Water
 ``` 
 You can filter pokemons with their attributes such as Name, BaseAttack, BaseDefense, BaseStamina, Weight, Height etc.
-```
-$ curl http://localhost:5000/get/pokemons?Name=Pikachu
-``` 
 Some attributes may have return more than one pokemon. 
 ```
 $ curl http://localhost:5000/get/pokemons?BaseAttack=148
+$ curl http://localhost:5000/get/types?effectiveAgainst=Dark
 ```
 You can apply multiple filters.
 ```
@@ -52,6 +50,6 @@ $ curl http://localhost:5000/get/pokemons?BaseAttack=148&sortby=Weight&order=des
 Counting pokemons, types or moves are pretty straightforward. Replacing /get/ with /count/ will return the count.
 ```
 $ curl http://localhost:5000/count/moves
-$ curl http://localhost:5000/count/pokemons?type=Dark
+$ curl http://localhost:5000/count/pokemons?type=Electric
 $ curl http://localhost:5000/count/pokemons?Weight=120
 ```
