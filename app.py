@@ -46,6 +46,9 @@ def getItems(keys, key,name,data,category):
         value = str(value) + ' kg'
     elif key == 'Height' or key == 'height':
         value = str(value) + ' m'
+    elif key in listAttributes: # If key is a list (like Special Attack(s) or effectiveAgainst)
+        data = [item for item in data if value in item[key]]
+        return data
     data = [item for item in data if str(item[key]).casefold() == str(value).casefold()] 
     return data
 
