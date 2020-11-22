@@ -37,7 +37,7 @@ $ curl http://localhost:5000/get/pokemons?BaseAttack=148&BaseStamina=130&Type=St
 ```
 
 ## Sort
-There are 4 functions that helps you sorting the output: `max`, `min`, `sortby` and `order`.
+There are 4 functions that help you sorting the output: `max`, `min`, `sortby` and `order`.
 ```
 $ curl http://localhost:5000/get/moves?max=damage
 $ curl http://localhost:5000/get/types?min=weakAgainst
