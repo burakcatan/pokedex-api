@@ -144,7 +144,11 @@ def getFunction(isCount, category):
     else:
         output = data
 
-    return jsonify(output)
+    return jsonify({
+        'success': True,
+        'statusCode': 200,
+        'data': output
+        })
 
 def mainFunction(isCount,category):
     # getFunction with error handling.
@@ -157,12 +161,14 @@ class mainErrorHandler(Exception): # To return more detailed error messages.
     
     def __init__(self, errorType, message, status_code=None):
         Exception.__init__(self)
+        self.success = False
         self.message = message
         self.status_code = status_code
         self.errorType = errorType
 
     def to_dict(self):
         response = {}
+        response['success'] = self.success
         response['error'] = self.errorType
         response['message'] = self.message
         response['statusCode'] = self.status_code

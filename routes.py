@@ -28,6 +28,7 @@ def handle_main_error(error):
 @app_bp.app_errorhandler(404)
 def handle_404(error):
     response = {}
+    response['success'] = False
     response['error'] = 'NotFound'
     response['message'] = 'Page not found.'
     response['statusCode'] = 404
