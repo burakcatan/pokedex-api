@@ -147,7 +147,7 @@ def getFunction(isCount, category):
     return jsonify({
         'success': True,
         'statusCode': 200,
-        'data': output
+        'results': output
         })
 
 def mainFunction(isCount,category):
